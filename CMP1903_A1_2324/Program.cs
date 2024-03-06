@@ -15,7 +15,7 @@ namespace CMP1903_A1_2324
             game.Results(Dice); //Calls upon the method "Results" within "Game" which will print the results of the game
 
             Testing testing = new Testing(); //Creates a new testing object
-            testing.Test; //Runs the testing class
+            testing.Test(); //Runs the testing class
         }
     }
 }

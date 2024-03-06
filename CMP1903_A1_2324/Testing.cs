@@ -17,16 +17,17 @@ namespace CMP1903_A1_2324
          */
 
         //Method
-        public void Test //Declaring a public void so no return is required and the game can therefore be ran as necessary
+        public void Test() //Declaring a public void so no return is required and the game can therefore be ran as necessary
         {
-            Game testgame = new Game(); //Instantiating a new game object
-            int[] Dice = testgame.AllDieRolls(); //Declaring the integer array of "Dice" which will later store the values of "AllDieRolls"
-            int gamesum = testgame.RollTotal; //Creates an array to store the value of all of the rolls which have been made in the "Game" class - this will be the given outcome
+            Game game = new Game(); //Instantiating a new game object
+            int[] Dice = game.AllDieRolls(); //Declaring the integer array of "Dice" which will later store the values of "AllDieRolls"
+            int gamesum = game.RollTotal(Dice); //Creates an array to store the value of all of the rolls which have been made in the "Game" class - this will be the given outcome
             int expected = Dice[0] + Dice[1] + Dice[2]; //This integer adds the variables locally within the "Testing" class - this will be the expected outcome
-           
+            Debug.Assert(gamesum == expected, message: "The sums don't match!");
 
-            Die die = new Die();
-            int TestRoll = Die.AllDieRolls(); //Creates a test object using the testing class
+           Die Die = new Die();
+            int TestRoll = Die.RollTheDice();
+            Debug.Assert(TestRoll >= 1 & TestRoll <= 6, "The die roll is outside of set Parameters");
         }
     }
 }
